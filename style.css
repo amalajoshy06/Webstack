@@ -1,0 +1,140 @@
+/* style.css */
+
+:root {
+  --teal: #008080;
+  --light-teal: #00a0a0;
+  --off-white: #f5f5f5;
+  --dark-gray: #333;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--off-white);
+  color: var(--dark-gray);
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: var(--teal);
+  color: var(--off-white);
+  padding: 1rem;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.menu-toggle, .page-radio {
+  display: none;
+}
+
+.menu-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.menu-icon:hover {
+  color: var(--light-teal);
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--teal);
+  padding: 1rem;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.menu-toggle:checked ~ .menu {
+  display: block;
+}
+
+.menu label {
+  display: block;
+  color: var(--off-white);
+  text-decoration: none;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.menu label:hover {
+  color: var(--light-teal);
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 4px;
+}
+
+h2 {
+  color: var(--teal);
+  border-bottom: 2px solid var(--teal);
+  padding-bottom: 0.5rem;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+}
+
+footer {
+  background-color: var(--teal);
+  color: var(--off-white);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+.content {
+  display: none;
+}
+
+#radio-home:checked ~ main #content-home,
+#radio-topic1:checked ~ main #content-topic1,
+#radio-topic2:checked ~ main #content-topic2,
+#radio-topic3:checked ~ main #content-topic3,
+#radio-topic4:checked ~ main #content-topic4,
+#radio-topic5:checked ~ main #content-topic5,
+#radio-topic6:checked ~ main #content-topic6,
+#radio-topic7:checked ~ main #content-topic7,
+#radio-topic8:checked ~ main #content-topic8,
+#radio-topic9:checked ~ main #content-topic9 {
+  display: block;
+}
+
+#radio-home:checked ~ header .menu label[for="radio-home"],
+#radio-topic1:checked ~ header .menu label[for="radio-topic1"],
+#radio-topic2:checked ~ header .menu label[for="radio-topic2"],
+#radio-topic3:checked ~ header .menu label[for="radio-topic3"],
+#radio-topic4:checked ~ header .menu label[for="radio-topic4"],
+#radio-topic5:checked ~ header .menu label[for="radio-topic5"],
+#radio-topic6:checked ~ header .menu label[for="radio-topic6"],
+#radio-topic7:checked ~ header .menu label[for="radio-topic7"],
+#radio-topic8:checked ~ header .menu label[for="radio-topic8"],
+#radio-topic9:checked ~ header .menu label[for="radio-topic9"] {
+  color: var(--light-teal);
+}
